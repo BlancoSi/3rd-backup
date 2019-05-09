@@ -1,5 +1,5 @@
 ---
-title: testVideoMD
+title: 外链B站视频：保持大小与纵横比
 date: 2019-05-07 20:36:01
 tags:
 ---
@@ -26,8 +26,9 @@ tags:
 }
 </style>
 
+
+### 1. 上面这种：
 ```
-上面这种：
 <div class="aspect-ratio">
   <iframe src="//player.bilibili.com/player.html?aid=13379801&cid=21925894&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 </div>
@@ -50,8 +51,9 @@ tags:
   top: 0;
 }
 </style>
-
-另外一种：
+```
+### 2. 另外一种：
+```
 <iframe id='video' src="//player.bilibili.com/player.html?aid=13379801&cid=21925894&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width=100%> </iframe>
 <script type="text/javascript">
 document.getElementById("video").style.height=document.getElementById("video").scrollWidth*0.75+"px";
