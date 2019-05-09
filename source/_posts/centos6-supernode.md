@@ -6,13 +6,22 @@ tags:
 
 # N2N简易食用指南
 
+## 用途：
+1. 在数个不互通NAT路由私网设备间实现通过ip直接互联。
+2. 实现后可以直接通过ip通信，可以直接~~打局域网联机游戏~~传输数据了。
+
+~~其实我还没实际用过，只是搭好了2333，有问题欢迎私戳~~:thinking_face: 
+
+
 ## 简介：
 
-1. N2N是一款开源的软件，作者是著名的开源网管软件ntop的作者Luca Deri。
+1. N2N是一款开源的[P2P VPN](https://www.google.com/)软件，作者是著名的开源网管软件ntop的作者Luca Deri。
 2. N2N是基于P2P协议之上的两个私有网络间的加密层。
 3. 加密是在edge节点上执行的，使用开放的协议，用户自己定义密钥，过程完全自治。
-4. 每个n2n用户可以同时隶属于多个网络
-5. 请了解[内网穿透](https://baike.baidu.com/item/内网穿透/8597835?fr=aladdin)的原理
+4. 每个n2n用户可以同时隶属于多个网络。
+5. ~~操作过程极其简便。~~
+
+注：The TAP drivers should be installed into the system. They can be installed from [here](http://build.openvpn.net/downloads/releases) (search for "tap-windows")
 
 ## N2N架构组件：
 
@@ -20,7 +29,7 @@ tags:
 它在edge节点间建立握手，或为位于防火墙之后的节点中转数据。它的基础作用是注册节点的网络路径，并为不能直通的节点做路由，能够直通的节点间通信，是P2P的。
 2. Edge：边缘（节点）
 用户PC机上安装的用于建立n2n网络的软件。几乎每个edge节点都会建立一个tun/tap设备，作为接入n2n网络的入口。
-### 原理：super node提供场所，让两个位于NAT/防火墙之后的edge node进行会面，一旦双方完成首次握手，剩下的数据流就之发生在两个edge node之间，如果有一方的NAT属于对称型(symmetrical)，supernode则还需继续为双方提供数据包的转发;edge node负责数据流的加解密。加密算法采用了twofish，开源、简便，处理速度快。
+### 大概原理：super node提供场所，让两个位于NAT/防火墙之后的edge node进行会面，一旦双方完成首次握手，剩下的数据流就之发生在两个edge node之间，如果有一方的NAT属于对称型(symmetrical)，supernode则还需继续为双方提供数据包的转发;edge node负责数据流的加解密。加密算法采用了twofish，开源、简便，处理速度快。
 
 ## 源码地址：
 
@@ -29,6 +38,7 @@ tags:
 #### 注1：此源码地址为n2n的开发分支，meyerd/n2n，由于不明原因，官方即ntop/n2n的源码是不能编译的。
 #### 注2：n2n源码没有包含gui应用程序，这里也没有提供，所以本文中介绍的全部关于使用n2n的操作都是命令行操作。
 #### 注3：n2n目前有v1 v2两个版本，区别是v2安全性高一点。本文使用v2。使用时注意edge和supernode版本一致，最好同时git源码在本地编译。
+#### 注4：请了解[内网穿透](https://baike.baidu.com/item/内网穿透/8597835?fr=aladdin)、[NET（Network Address Translation，网络地址转换）](https://baike.baidu.com/item/nat/320024?fr=aladdin)的原理。设定ip前了解[IPV4](https://baike.baidu.com/item/IPv4/422599?fr=aladdin)的地址分配规则。
 
 ## 本人使用环境：
 
