@@ -12,6 +12,7 @@ tags:
 2. N2N是基于P2P协议之上的两个私有网络间的加密层。
 3. 加密是在edge节点上执行的，使用开放的协议，用户自己定义密钥，过程完全自治。
 4. 每个n2n用户可以同时隶属于多个网络
+5. 请了解[内网穿透](https://baike.baidu.com/item/内网穿透/8597835?fr=aladdin)的原理
 
 ## N2N架构组件：
 
@@ -126,3 +127,4 @@ N2N_KEY=encryptme sudo ./edge -d n2n0 -c mynetwork -u 99 -g 99 -m 3C:A0:12:34:56
 	1. https://github.com/meyerd/n2n/wiki/run
 	2. https://github.com/ntop/n2n
 	3. https://www.baidu.com/
+	4. https://baike.baidu.com/item/内网穿透/8597835?fr=aladdin
