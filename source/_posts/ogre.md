@@ -1,3 +1,8 @@
+---
+title: ogre
+date: 2019-05-12 19:05:46
+tags:
+---
 ### 使用ogre的游戏编程（1）：通过cmake构建工程文件并编译
 ### 用到：vs2019 cmake ogre源码
 
@@ -13,8 +18,8 @@
 
 生成工程文件然后编译的过程中最好使用cmake：
 
-	1. 把你写的·cpp文件·hpp文件放一个文件夹里
-	2. 写个CMakeLists.txt格式如下：
+1. 把你写的·cpp文件·hpp文件放一个文件夹里
+2. 写个CMakeLists.txt格式如下：
 ```
 		cmake_minimum_required (VERSION 2.8)
 		project(XXX)
@@ -32,7 +37,7 @@
 		add_executable(anotherexe Y.cpp)
 		target_link_libraries(anotherexe ${OGRE_LIBRARIES})
 ```
-	3. cmake把这个文件夹设为源文件夹，然后随便找个文件夹生成，open project，用vs全部生成
-	4. ok了，制作完成
+3. cmake把这个文件夹设为源文件夹，然后随便找个文件夹生成，open project，用vs全部生成
+4. ok了，制作完成
 
 过程可以参考：https://blog.csdn.net/zb1165048017/article/details/78673742
